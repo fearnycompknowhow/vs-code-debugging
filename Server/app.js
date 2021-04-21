@@ -1,5 +1,6 @@
 const express = require('express');
 const { level1 } = require('./callStack');
+const { exceptions } = require('./exceptions');
 const { inlineBreakpoints } = require('./inlineBreakpoints');
 const { setup } = require('./setup');
 const { variableWatching } = require('./variableWatching');
@@ -25,11 +26,23 @@ app.get('/hitCount', (req, res) => {
 	res.sendStatus(200);
 });
 
-app.get('/condition', (req, res) => {
+app.get('/conditional', (req, res) => {
 	res.sendStatus(200);
 });
 
 app.get('/logPoint', (req, res) => {
+	res.sendStatus(200);
+});
+
+app.get('/inline', (req, res) => {
+	inlineBreakpoints();
+
+	res.sendStatus(200);
+});
+
+app.get('/exceptions', (req, res) => {
+	exceptions();
+
 	res.sendStatus(200);
 });
 
@@ -41,12 +54,6 @@ app.get('/callStack', (req, res) => {
 
 app.get('/variableWatching', (req, res) => {
 	variableWatching();
-
-	res.sendStatus(200);
-});
-
-app.get('/inlineBreakpoints', (req, res) => {
-	inlineBreakpoints();
 
 	res.sendStatus(200);
 });

@@ -6,12 +6,16 @@
 
 <script>
 import { defineComponent } from 'vue';
+import { setup } from './setup';
+import { method } from './method';
+
+setup();
 
 export default defineComponent({
 	name: 'App',
 	methods: {
 		onClick() {
-			console.log('Clicked!');
+			method();
 		}
 	}
 });
