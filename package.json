@@ -7,6 +7,7 @@
     "dev": "run-p chrome serve",
 		"serve": "vue-cli-service serve",
 		"chrome": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --remote-debugging-port=9222 --new-window http://localhost:8080",
+		"brave": "/Applications/Brave\\ Browser.app/Contents/MacOS/Brave\\ Browser  --remote-debugging-port=9222 --new-window http://localhost:8080",
     "build": "vue-cli-service build",
     "api": "node ./Server/app.js",
     "api-debug": "node --inspect ./Server/app.js"

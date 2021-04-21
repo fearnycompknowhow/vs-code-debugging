@@ -47,7 +47,7 @@
 			}
 		},
 		{
-			"name": "Brave (Attach)",
+			"name": "Brave (Launch)",
 			"type": "chrome",
 			"request": "launch",
 			"runtimeExecutable": "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser",
