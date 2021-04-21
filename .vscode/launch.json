@@ -2,7 +2,7 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "API",
+			"name": "API (Launch)",
 			"type": "node",
 			"request": "launch",
 			"skipFiles": [
@@ -10,6 +10,15 @@
 			],
 			"program": "${workspaceFolder}/Server/app.js",
 			"runtimeVersion": "12.19.0"
+		},
+		{
+			"name": "API (Attach)",
+			"processId": "${command:PickProcess}",
+			"request": "attach",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "pwa-node"
 		},
 		{
 			"name": "Chrome (Launch)",
