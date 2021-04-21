@@ -1,0 +1,65 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "API (Launch)",
+			"type": "node",
+			"request": "launch",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"program": "${workspaceFolder}/Server/app.js",
+			"runtimeVersion": "12.19.0"
+		},
+		{
+			"name": "API (Attach)",
+			"processId": "${command:PickProcess}",
+			"request": "attach",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "pwa-node"
+		},
+		{
+			"name": "Chrome (Launch)",
+			"type": "chrome",
+			"request": "launch",
+			"url": "http://localhost:8080",
+			"webRoot": "${workspaceFolder}",
+			"pathMapping": {
+				"/_karma_webpack_": "${workspaceFolder}"
+			},
+			"sourceMapPathOverrides": {
+				"webpack:///./src/*": "${webRoot}/src/*"
+			}
+		},
+		{
+			"name": "Chrome (Attach)",
+			"type": "pwa-chrome",
+			"request": "attach",
+			"port": 9222,
+			"webRoot": "${workspaceFolder}",
+			"pathMapping": {
+				"/_karma_webpack_": "${workspaceFolder}"
+			},
+			"sourceMapPathOverrides": {
+				"webpack:///./src/*": "${webRoot}/src/*"
+			}
+		},
+		{
+			"name": "Brave (Attach)",
+			"type": "chrome",
+			"request": "launch",
+			"runtimeExecutable": "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser",
+			"userDataDir": true,
+			"url": "http://localhost:8080",
+			"webRoot": "${workspaceFolder}",
+			"pathMapping": {
+				"/_karma_webpack_": "${workspaceFolder}"
+			},
+			"sourceMapPathOverrides": {
+				"webpack:///./src/*": "${webRoot}/src/*"
+			}
+		}
+	]
+}
